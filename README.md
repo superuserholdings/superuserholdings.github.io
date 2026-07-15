@@ -1,98 +1,70 @@
-# vinext-starter
+# Super User Holdings
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+Practical websites, automation systems, AI assistants, dashboards, and custom web tools for small businesses and teams.
 
-## Prerequisites
+This repository contains the public-facing Super User Holdings portfolio and service-system website. It explains what we build, how we work, and how practical technology can help businesses respond faster, reduce repetitive work, and operate with greater clarity.
 
-- Node.js `>=22.13.0`
+## What We Build
 
-## Quick Start
+### SuperSites
+Professional business websites, landing pages, lead-capture experiences, and conversion-focused service pages.
 
-```bash
-npm install
-npm run dev
-npm run build
-```
+### SuperAutomations
+Workflow and process automation designed to reduce repetitive administrative work and improve follow-up.
 
-This starter does not use `wrangler.jsonc`.
+### SuperAgents
+AI-assisted tools for customer support, sales, operations, internal knowledge, and receptionist-style workflows.
 
-## Included Shape
+### SuperDashboards
+Reporting dashboards and business-intelligence views that make important information easier to understand and act on.
 
-- edit site code under `app/`
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
+### SuperApps
+Custom internal tools, customer portals, operational systems, and SaaS minimum viable products.
 
-## Workspace Auth Headers
+### SuperCare
+Maintenance, monitoring, updates, documentation, and ongoing technical support.
 
-OpenAI workspace sites can read the current user's email from
-`oai-authenticated-user-email`.
+## How We Work
 
-SIWC-authenticated workspace sites may also receive
-`oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty
-`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by
-`oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
+Our delivery process follows four clear stages:
 
-Treat the full name as optional and fall back to email when it is absent:
+1. **Define** — Clarify the business problem, users, scope, risks, and success criteria.
+2. **Build** — Create the smallest useful version with maintainable components and clear milestones.
+3. **Prove** — Test the workflow, verify the result, and document limitations.
+4. **Launch** — Release only after review, approval, and readiness checks.
 
-```tsx
-import { headers } from "next/headers";
+## Operating Principles
 
-export default async function Home() {
-  const requestHeaders = await headers();
-  const email = requestHeaders.get("oai-authenticated-user-email");
-  const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
-  const fullName =
-    encodedFullName &&
-    requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
-      "percent-encoded-utf-8"
-      ? decodeURIComponent(encodedFullName)
-      : null;
+- Trust and transparency
+- Clear scope and practical outcomes
+- Human approval before consequential external actions
+- Local-first development when appropriate
+- Secure handling of business and customer information
+- Reusable, maintainable systems
+- Honest demonstrations without invented client results
 
-  const displayName = fullName ?? email;
-  // ...
-}
-```
+## Featured Work
 
-## Optional Dispatch-Owned ChatGPT Sign-In
+The portfolio is being prepared around several project categories:
 
-Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs
-optional or required ChatGPT sign-in:
+- Super User Holdings product and service website
+- Business website and lead-capture demonstrations
+- Scrap Change mileage and receipt-tracking application
+- Shelly privacy-conscious business-finance workflow concept
+- AI receptionist, automation, dashboard, and internal-tool demonstrations
 
-- Use `getChatGPTUser()` for optional signed-in UI.
-- Use `requireChatGPTUser(returnTo)` for server-rendered pages that should send
-  anonymous visitors through Sign in with ChatGPT.
-- Use `chatGPTSignInPath(returnTo)` and `chatGPTSignOutPath(returnTo)` for
-  browser links or actions.
-- Pass a same-origin relative `returnTo` path for the destination after sign-in
-  or sign-out. The helper validates and safely encodes it.
-- Mark protected pages with `export const dynamic = "force-dynamic"` because
-  they depend on per-request identity headers.
+Some projects are private or contain sensitive operational information. Public examples use sanitized screenshots, fictional records, and clearly labeled placeholders.
 
-Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the
-OAuth cookies, and identity header injection. Do not implement app routes for
-those reserved paths. Routes that do not import and call the helper remain
-anonymous-compatible.
+## Privacy and Demonstration Data
 
-SIWC establishes identity only; it does not prove workspace membership. Use the
-Sites hosting platform's access policy controls for workspace-wide restrictions,
-or enforce explicit server-side membership or allowlist checks.
+Do not place passwords, API keys, access tokens, recovery codes, banking information, tax information, identity documents, customer records, private network details, or other confidential information in this repository, its issues, or its discussions.
 
-Use SIWC for account pages, user-specific dashboards, saved records, and write
-actions tied to the current ChatGPT user. Leave public content anonymous.
+All public demonstrations must use synthetic or placeholder data, including values such as:
 
-## Useful Commands
-
-- `npm run dev`: start local development
-- `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
-- `npm run db:generate`: generate Drizzle migrations after schema changes
-
-## Learn More
-
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+```text
+[DEMO COMPANY]
+[ACCOUNT ALIAS]
+[SYNTHETIC BALANCE]
+[NODE NAME]
+[PRIVATE ENDPOINT]
+[REDACTED SECRET]
