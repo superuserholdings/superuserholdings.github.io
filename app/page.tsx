@@ -101,6 +101,7 @@ export default function Home() {
         <nav aria-label="Main navigation">
           <a href="#products">Products</a>
           <a href="#process">How we build</a>
+          <a href="/responsible-publishing">Publishing standard</a>
           <a href="#start" className="nav-cta">Start a project</a>
         </nav>
       </header>
@@ -261,6 +262,7 @@ export default function Home() {
         <div className="footer-links">
           <a href="#products">Products</a>
           <a href="#process">Process</a>
+          <a href="/responsible-publishing">Publishing standard</a>
           <a href="#start">Start</a>
         </div>
         <p>© 2026 Super User Holdings. Built with purpose.</p>

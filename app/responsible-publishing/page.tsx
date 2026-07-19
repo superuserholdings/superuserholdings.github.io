@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Responsible Publishing | Super User Holdings",
   description: "How Super User Holdings reviews, verifies, and maintains public information.",
@@ -23,7 +25,7 @@ export default function ResponsiblePublishing() {
       <p style={{ marginTop: "2.5rem" }}>
         Good publishing is not just posting. It is making information dependable enough for people to act on.
       </p>
-      <p><a href="/">Return to Super User Holdings</a></p>
+      <p><Link href="/">Return to Super User Holdings</Link></p>
     </main>
   );
 }
