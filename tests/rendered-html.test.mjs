@@ -23,5 +23,8 @@ test("renders the Super User Holdings product site", async () => {
   assert.match(html, /SuperAgents/);
   assert.match(html, /SuperCare/);
   assert.match(html, /From idea to operating system/);
+  assert.match(html, /Send secure request/);
+  assert.match(html, /What should we help you build or fix/);
+  assert.doesNotMatch(html, /CUSTOMER_INTAKE_TOKEN|x-supercore-intake-token|127\\.0\\.0\\.1:8091|127\\.0\\.0\\.1:5678/i);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
 });
