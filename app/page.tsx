@@ -1,3 +1,5 @@
+import ContactForm from "./contact-form";
+
 const products = [
   {
     code: "01",
@@ -249,8 +251,7 @@ export default function Home() {
             <li><span>02</span>What is slowing it down today</li>
             <li><span>03</span>Who needs to use the solution</li>
           </ol>
-          <a className="button primary" href="https://superuserholdings.com">Visit Super User Holdings <span>↗</span></a>
-          <small>No payment or commitment is required to define the opportunity.</small>
+          <ContactForm />
         </div>
       </section>
 
