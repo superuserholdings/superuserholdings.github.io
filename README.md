@@ -55,6 +55,23 @@ The portfolio is being prepared around several project categories:
 
 Some projects are private or contain sensitive operational information. Public examples use sanitized screenshots, fictional records, and clearly labeled placeholders.
 
+## Customer Intake
+
+The public homepage includes a customer-intake form in the Start section. The
+static site posts only visitor-provided contact fields to the SuperCore 3.1
+public relay:
+
+```text
+https://supercore.superuserholdings.com/customer-intake/submissions
+```
+
+The relay forwards accepted submissions to the private Mini PC intake service.
+Private intake tokens, notification details, infrastructure paths, and mission
+evidence are never embedded in this repository or returned to the browser.
+
+Expected public response fields are limited to `ok`, `submission_id`, `status`,
+and `duplicate`. Customer work remains blocked until owner approval.
+
 ## Privacy and Demonstration Data
 
 Do not place passwords, API keys, access tokens, recovery codes, banking information, tax information, identity documents, customer records, private network details, or other confidential information in this repository, its issues, or its discussions.
