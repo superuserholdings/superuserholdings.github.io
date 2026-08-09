@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 
 const DEFAULT_ENDPOINT = "https://supercore.superuserholdings.com/customer-intake/submissions";
 
@@ -16,6 +16,16 @@ export function ContactForm() {
     status: "idle",
     message: "No payment or commitment is required to define the opportunity.",
   });
+  const messageRef = useRef<HTMLTextAreaElement | null>(null);
+
+  useEffect(() => {
+    // If we arrived from the product quiz (?about=Product), prefill the message.
+    const params = new URLSearchParams(window.location.search);
+    const about = params.get("about");
+    if (about && messageRef.current) {
+      messageRef.current.value = `I'd like to talk about ${about} for my business.`;
+    }
+  }, []);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -76,7 +86,7 @@ export function ContactForm() {
       </label>
       <label className="full">
         <span>What do you want fixed or built?</span>
-        <textarea name="message" required maxLength={8000} rows={5} />
+        <textarea name="message" ref={messageRef} required maxLength={8000} rows={5} />
       </label>
       <button className="button primary" type="submit" disabled={state.status === "sending"}>
         {state.status === "sending" ? "Sending…" : "Start the intake"} <span>↗</span>
