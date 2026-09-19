@@ -53,6 +53,14 @@ export default function Home() {
             <Link className="button primary" href="/products">
               See what we build <span>↗</span>
             </Link>
+            <a
+              className="button quiet"
+              href="https://shop.superuserholdings.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              Shop our gear <span>↗</span>
+            </a>
             <Link className="button quiet" href="/how-we-work">
               How we work
             </Link>
