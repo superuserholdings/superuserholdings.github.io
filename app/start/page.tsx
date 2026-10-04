@@ -1,13 +1,29 @@
+import Link from "next/link";
 import { Reveal } from "../components/reveal";
 import { SiteFooter } from "../components/site-footer";
 import { SiteHeader } from "../components/site-header";
 import { ContactForm } from "../contact-form";
 
 export const metadata = {
-  title: "Start a project | Super User Holdings",
+  title: "Talk to us | Super User Holdings",
   description:
-    "Tell us what is stuck in your business. We will be honest about whether we can help and what it would take.",
+    "Running AI infrastructure or funding the trust layer? Get in touch with Super User Holdings.",
 };
+
+const paths = [
+  {
+    title: "I want to run AI on Supercore",
+    description:
+      "Tell us about your workloads and what trustworthy infrastructure would change for you.",
+    about: "customer",
+  },
+  {
+    title: "I want to invest",
+    description:
+      "Tell us who you are and what you fund. We read every note ourselves.",
+    about: "investor",
+  },
+];
 
 export default function StartPage() {
   return (
@@ -16,40 +32,32 @@ export default function StartPage() {
 
       <section className="start section-shell">
         <Reveal as="div">
-          <p className="section-index">START A PROJECT</p>
+          <p className="section-index">TALK TO US</p>
           <h2>
-            Tell us what is stuck.
+            Two kinds of conversation.
             <br />
-            <span>We will tell you honestly if we can help.</span>
+            <span>Pick yours.</span>
           </h2>
           <p className="start-lead">
-            A good first conversation needs only three things. You do not need a
-            polished pitch or a spec sheet. No payment or commitment is required
-            to define the opportunity.
+            Whether you run AI workloads or fund the people building the trust
+            layer, the next step is the same: a straight conversation. No pitch
+            decks required to say hello.
           </p>
-          <ol className="start-list">
-            <li>
-              <span>01</span>
-              <div>
-                <strong>The result you want</strong>
-                <small>Even a rough description is fine.</small>
-              </div>
-            </li>
-            <li>
-              <span>02</span>
-              <div>
-                <strong>What is slowing you down today</strong>
-                <small>The step that eats the most time or costs the most.</small>
-              </div>
-            </li>
-            <li>
-              <span>03</span>
-              <div>
-                <strong>Who needs to use the solution</strong>
-                <small>Customers, your team, or just you for now.</small>
-              </div>
-            </li>
-          </ol>
+          <div className="path-grid">
+            {paths.map((path) => (
+              <Link
+                key={path.about}
+                className="path-card"
+                href={`/start?about=${path.about}`}
+              >
+                <h3>{path.title}</h3>
+                <p>{path.description}</p>
+                <span>
+                  Choose this path <span>→</span>
+                </span>
+              </Link>
+            ))}
+          </div>
         </Reveal>
 
         <Reveal delay={120}>

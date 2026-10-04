@@ -1,65 +1,55 @@
 # Super User Holdings
 
-Practical websites, automation systems, AI assistants, dashboards, and custom web tools for small businesses and teams.
+Super User Holdings is the technology company behind **Supercore OS** — a
+purpose-built operating system for AI infrastructure with a hardware-enforced
+off switch that no AI workload can disable or reach.
 
-This repository contains the public-facing Super User Holdings portfolio and service-system website. It explains what we build, how we work, and how practical technology can help businesses respond faster, reduce repetitive work, and operate with greater clarity.
+This repository contains the public-facing website. It presents the company,
+the product lineup, and the story behind the build — for customers and
+investors alike.
 
 ## What We Build
 
-### SuperSites
-Professional business websites, landing pages, lead-capture experiences, and conversion-focused service pages.
+### Supercore OS
+A purpose-built operating system for AI infrastructure. Runs models, agents,
+containers, and VMs on a hardened base — model-agnostic, with the Safeguard
+built in, not bolted on.
 
-### SuperAutomations
-Workflow and process automation designed to reduce repetitive administrative work and improve follow-up.
+### AI Hypervisor
+Virtualization built for AI workloads: pooled hardware across machines,
+GPU-aware placement, and strict isolation between workloads and the management
+plane.
 
-### SuperAgents
-AI-assisted tools for customer support, sales, operations, internal knowledge, and receptionist-style workflows.
+### Safeguard
+A hardware-enforced dead man's switch. It stays on only while a person says
+so — no AI workload can disable it, reach it, or change its mind. Ships inside
+every Supercore deployment. Never optional.
 
-### SuperDashboards
-Reporting dashboards and business-intelligence views that make important information easier to understand and act on.
+**Public-disclosure rule:** this site deploys publicly. The Safeguard is
+described only at the level of "hardware-enforced off switch" / "dead man's
+switch no AI workload can disable or reach." Implementation details
+(architecture, components, protocols) are never published here.
 
-### SuperApps
-Custom internal tools, customer portals, operational systems, and SaaS minimum viable products.
+## Company Principles
 
-### SuperCare
-Maintenance, monitoring, updates, documentation, and ongoing technical support.
+- Human authority — the off switch answers to people, not software
+- Trust is the product — we sell trust, not models
+- Evidence over theater — working systems and honest limitations
+- Built to continue — clear design, reproducible builds
 
-## How We Work
+## Site Structure
 
-Our delivery process follows four clear stages:
-
-1. **Define** — Clarify the business problem, users, scope, risks, and success criteria.
-2. **Build** — Create the smallest useful version with maintainable components and clear milestones.
-3. **Prove** — Test the workflow, verify the result, and document limitations.
-4. **Launch** — Release only after review, approval, and readiness checks.
-
-## Operating Principles
-
-- Trust and transparency
-- Clear scope and practical outcomes
-- Human approval before consequential external actions
-- Local-first development when appropriate
-- Secure handling of business and customer information
-- Reusable, maintainable systems
-- Honest demonstrations without invented client results
-
-## Featured Work
-
-The portfolio is being prepared around several project categories:
-
-- Super User Holdings product and service website
-- Business website and lead-capture demonstrations
-- Scrap Change mileage and receipt-tracking application
-- Shelly privacy-conscious business-finance workflow concept
-- AI receptionist, automation, dashboard, and internal-tool demonstrations
-
-Some projects are private or contain sensitive operational information. Public examples use sanitized screenshots, fictional records, and clearly labeled placeholders.
+- `/` — Supercore OS hero and the trust story
+- `/products` — the product lineup with an interactive explorer
+- `/company` — the company story, the bet, the regulatory tailwind, investor CTA
+- `/start` — contact intake with customer / investor paths
+- `/privacy`, `/responsible-publishing` — policy pages
 
 ## Customer Intake
 
-The public homepage includes a customer-intake form in the Start section. The
-static site posts only visitor-provided contact fields to the SuperCore 3.1
-public relay:
+The public site includes an intake form on `/start` with customer and investor
+paths (`?about=customer`, `?about=investor`). The static site posts only
+visitor-provided contact fields to the SuperCore 3.1 public relay:
 
 ```text
 https://supercore.superuserholdings.com/customer-intake/submissions
@@ -70,7 +60,7 @@ Private intake tokens, notification details, infrastructure paths, and mission
 evidence are never embedded in this repository or returned to the browser.
 
 Expected public response fields are limited to `ok`, `submission_id`, `status`,
-and `duplicate`. Customer work remains blocked until owner approval.
+and `duplicate`. Follow-up remains blocked until owner approval.
 
 ## Privacy and Demonstration Data
 
@@ -85,3 +75,4 @@ All public demonstrations must use synthetic or placeholder data, including valu
 [NODE NAME]
 [PRIVATE ENDPOINT]
 [REDACTED SECRET]
+```

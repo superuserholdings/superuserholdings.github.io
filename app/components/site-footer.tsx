@@ -8,7 +8,7 @@ export function SiteFooter() {
         <img src="/brand/emblem.png" alt="" />
         <div>
           <strong>SUPER USER HOLDINGS</strong>
-          <span>Practical software, built to last.</span>
+          <span>Trustworthy infrastructure for the AI era.</span>
         </div>
       </div>
       <div className="footer-links">
@@ -18,7 +18,7 @@ export function SiteFooter() {
           </Link>
         ))}
         <Link href="/responsible-publishing">Publishing standard</Link>
-        <Link href="/start">Start a project</Link>
+        <Link href="/start">Talk to us</Link>
       </div>
       <p>© 2026 Super User Holdings. Built with purpose.</p>
     </footer>

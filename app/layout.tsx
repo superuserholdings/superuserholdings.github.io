@@ -8,25 +8,25 @@ const siteUrl = "https://superuserholdings.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Super User Holdings | Websites, Apps, Automation & AI",
+  title: "Super User Holdings | Supercore OS — Trustworthy AI Infrastructure",
   description:
-    "Websites, apps, automations, AI assistants, dashboards, and ongoing care built as one accountable system for growing businesses.",
+    "Super User Holdings builds Supercore OS: a purpose-built operating system for AI infrastructure with a hardware-enforced off switch no AI workload can disable or reach.",
   icons: {
     icon: "/brand/emblem.png",
     shortcut: "/brand/emblem.png",
   },
   openGraph: {
-    title: "Build what your business should already have.",
+    title: "Give AI a foundation you can trust.",
     description:
-      "Software that fits the way your business works, with a real person staying accountable.",
-    images: [{ url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Super User Holdings product ecosystem" }],
+      "Supercore OS: a purpose-built operating system for AI infrastructure, with a hardware-enforced off switch built in.",
+    images: [{ url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Supercore OS by Super User Holdings" }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Build what your business should already have.",
+    title: "Give AI a foundation you can trust.",
     description:
-      "Software that fits the way your business works, with a real person staying accountable.",
+      "Supercore OS: a purpose-built operating system for AI infrastructure, with a hardware-enforced off switch built in.",
     images: [`${siteUrl}/og.png`],
   },
 };
