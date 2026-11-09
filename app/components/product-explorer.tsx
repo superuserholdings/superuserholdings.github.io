@@ -33,7 +33,7 @@ export function ProductExplorer() {
                 <small>{product.tagline}</small>
               </span>
               <span className="product-row-price">
-                <strong>{product.status}</strong>
+                Starting at <strong>{product.from}</strong>
               </span>
               <span className="product-row-toggle" aria-hidden="true">
                 {isOpen ? "−" : "+"}

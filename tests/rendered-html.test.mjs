@@ -12,37 +12,41 @@ async function render(path = "/") {
   );
 }
 
-const hiddenRoutes = [
-  "/",
-  "/products",
-  "/company",
-  "/start",
-  "/responsible-publishing",
-  "/privacy",
-];
+test("renders the Super User Holdings product site", async () => {
+  const response = await render();
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+  const html = await response.text();
+  assert.match(html, /Super User Holdings \| Websites, Apps, Automation &amp; AI/);
+  assert.match(html, /Build what your business/);
+  assert.match(html, /Software that fits the way you work/);
+  assert.match(html, /Three ways in/);
+  assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
+});
 
-test("all public pages show only the neutral holding page", async () => {
-  for (const path of hiddenRoutes) {
+test("renders the products page with the interactive explorer", async () => {
+  const response = await render("/products");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Six ways we can help/);
+  assert.match(html, /SuperSites/);
+  assert.match(html, /SuperAgents/);
+  assert.match(html, /SuperCare/);
+  assert.match(html, /Answer three questions/);
+  assert.match(html, /aria-expanded/);
+});
+
+test("renders how-we-work, work, start, and publishing pages", async () => {
+  for (const path of ["/how-we-work", "/work", "/start", "/responsible-publishing"]) {
     const response = await render(path);
     assert.equal(response.status, 200, `${path} should return 200`);
     const html = await response.text();
-    assert.match(html, /Super User Holdings/);
-    assert.match(html, /Our website is being updated/);
-    assert.match(html, /Please check back soon/);
-    assert.match(html, /name="robots" content="noindex, nofollow"/);
-    assert.doesNotMatch(
-      html,
-      /Supercore|Safeguard|AI Hypervisor|hardware-enforced|investor|intake|customer/i,
-      `${path} should not disclose product or intake information`,
-    );
+    assert.match(html, /Super User Holdings|SUPER USER/);
+    assert.match(html, /href="\/start"/);
   }
-});
-
-test("retired and previously indexed detail routes do not disclose site content", async () => {
-  for (const path of ["/how-we-work", "/work", "/terms-of-service.html"]) {
-    const response = await render(path);
-    assert.equal(response.status, 404, `${path} should return 404`);
-    const html = await response.text();
-    assert.doesNotMatch(html, /Supercore|Safeguard|AI Hypervisor|hardware-enforced/i);
-  }
+  const startHtml = (await (await render("/start")).text());
+  assert.match(startHtml, /name="email"/);
+  assert.match(startHtml, /name="message"/);
+  assert.match(startHtml, /Start the intake/);
+  assert.match(startHtml, /data-customer-intake-form="supercore-3\.1"/);
 });

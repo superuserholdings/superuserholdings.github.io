@@ -44,7 +44,7 @@ export function SiteHeader() {
           </Link>
         ))}
         <Link href="/start" className="nav-cta">
-          Talk to us
+          Start a project
         </Link>
       </nav>
 
@@ -76,7 +76,7 @@ export function SiteHeader() {
               </Link>
             ))}
             <Link href="/start" className="nav-cta">
-              Talk to us
+              Start a project
             </Link>
           </nav>
         </div>

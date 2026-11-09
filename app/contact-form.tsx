@@ -19,20 +19,11 @@ export function ContactForm() {
   const messageRef = useRef<HTMLTextAreaElement | null>(null);
 
   useEffect(() => {
-    // Prefill the message from the ?about= param: a product name, or one of
-    // the intake paths (customer / investor).
+    // If we arrived from the product quiz (?about=Product), prefill the message.
     const params = new URLSearchParams(window.location.search);
     const about = params.get("about");
     if (about && messageRef.current) {
-      if (about === "investor") {
-        messageRef.current.value =
-          "I'd like to talk about investing in Super User Holdings.";
-      } else if (about === "customer") {
-        messageRef.current.value =
-          "I'd like to talk about running my AI workloads on Supercore OS.";
-      } else {
-        messageRef.current.value = `I'd like to talk about ${about}.`;
-      }
+      messageRef.current.value = `I'd like to talk about ${about} for my business.`;
     }
   }, []);
 
