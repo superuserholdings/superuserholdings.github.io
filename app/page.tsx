@@ -61,6 +61,14 @@ export default function Home() {
             >
               Shop our gear <span>↗</span>
             </a>
+            <a
+              className="button quiet"
+              href="https://app.superuserholdings.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              Start your build <span>↗</span>
+            </a>
             <Link className="button quiet" href="/how-we-work">
               How we work
             </Link>
